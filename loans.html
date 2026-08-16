@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Кредиты Z Банка: потребительский, ипотека, автокредит. Калькулятор платежей и условия." />
+  <title>Кредиты — Z Банк</title>
+  <script>
+    try {
+      var t = localStorage.getItem("zbank-theme");
+      if (t === "dark" || (!t && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header id="site-header"></header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Кредиты</h1>
+        <p>Деньги на любые цели. Ставку видно до подписания, без мелкого шрифта.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Продукты</span>
+          <h2>Три способа получить деньги</h2>
+        </div>
+        <div class="grid-3">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M4 18h16"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M2 9l10-6 10 6"/></svg>
+            </div>
+            <h3>Потребительский</h3>
+            <p>До 5 000 000 ₽ на срок до 7 лет. Решение за 5 минут онлайн.</p>
+            <p class="price">от 10,9% годовых</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+            </div>
+            <h3>Ипотека</h3>
+            <p>Квартира, дом или рефинансирование. Срок до 30 лет, взнос от 15%.</p>
+            <p class="price">от 7,5% годовых</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16l1.5-4.5A2 2 0 0 1 8.4 10h7.2a2 2 0 0 1 1.9 1.5L19 16"/><path d="M4 16h16"/><circle cx="7.5" cy="17.5" r="2"/><circle cx="16.5" cy="17.5" r="2"/></svg>
+            </div>
+            <h3>Автокредит</h3>
+            <p>Новый или подержанный автомобиль. Одобрение за один рабочий день.</p>
+            <p class="price">от 12,5% годовых</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Калькулятор</span>
+          <h2>Считайте платёж сами</h2>
+          <p>Подвигайте ползунки — пересчёт мгновенный.</p>
+        </div>
+        <div class="calc-wrap" id="calc">
+          <div class="calc-inputs">
+            <label for="calc-amount">Сумма кредита</label>
+            <input type="range" id="calc-amount" min="100000" max="5000000" step="50000" value="1000000" />
+            <div class="range-row">
+              <span id="calc-amount-val">1 000 000 ₽</span>
+              <span>до 5 000 000 ₽</span>
+            </div>
+
+            <label for="calc-term">Срок</label>
+            <input type="range" id="calc-term" min="12" max="84" step="12" value="36" />
+            <div class="range-row">
+              <span id="calc-term-val">36 мес.</span>
+              <span>до 84 мес.</span>
+            </div>
+
+            <label>Ставка</label>
+            <div class="range-row">
+              <span>фиксированная для всех сумм</span>
+              <span>15,9%</span>
+            </div>
+          </div>
+          <div class="calc-result">
+            <span class="label">Платёж в месяц</span>
+            <div class="value" id="calc-month">35 125 ₽</div>
+            <div class="detail">
+              <span id="calc-rate">15,9% годовых</span>
+            </div>
+            <div class="detail">
+              <span>Итого вернёте</span>
+              <strong id="calc-total">1 264 500 ₽</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Сравнение</span>
+          <h2>Кредиты рядом</h2>
+        </div>
+        <table class="rates">
+          <thead>
+            <tr>
+              <th>Условие</th>
+              <th>Потребительский</th>
+              <th>Ипотека</th>
+              <th>Автокредит</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Сумма</td>
+              <td>до 5 000 000 ₽</td>
+              <td>до 60 000 000 ₽</td>
+              <td>до 7 000 000 ₽</td>
+            </tr>
+            <tr>
+              <td>Срок</td>
+              <td>до 7 лет</td>
+              <td>до 30 лет</td>
+              <td>до 7 лет</td>
+            </tr>
+            <tr>
+              <td>Ставка</td>
+              <td><span class="rate-value">от 10,9%</span></td>
+              <td><span class="rate-value">от 7,5%</span></td>
+              <td><span class="rate-value">от 12,5%</span></td>
+            </tr>
+            <tr>
+              <td>Решение</td>
+              <td>5 минут</td>
+              <td>1 день</td>
+              <td>1 день</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Вопросы</span>
+          <h2>Часто спрашивают</h2>
+        </div>
+        <div style="max-width: 760px; margin: 0 auto;">
+          <div class="faq-item">
+            <button class="faq-q">Какие документы нужны?</button>
+            <div class="faq-a">
+              Паспорт и ИНН. Для ипотеки дополнительно — подтверждение дохода:
+              справка 2-НДФЛ или выписка со счёта.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Можно погасить досрочно?</button>
+            <div class="faq-a">
+              Да, в любой момент и без комиссии. Заявку можно подать в приложении,
+              пересчёт произойдёт автоматически.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q">Как быстро будет решение?</button>
+            <div class="faq-a">
+              По потребительскому кредиту — до 5 минут. По ипотеке и автокредиту —
+              в течение одного рабочего дня.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <h2>Посчитали? Оформляйте</h2>
+        <p>Оставьте заявку — перезвоним и поможем с каждым шагом.</p>
+        <a href="contacts.html" class="btn btn-dark">Оставить заявку</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

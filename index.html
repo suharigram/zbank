@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Z Банк — карты, вклады, кредиты и ипотека. Всё решается в одном приложении." />
+  <title>Z Банк — деньги без нервов</title>
+  <script>
+    try {
+      var t = localStorage.getItem("zbank-theme");
+      if (t === "dark" || (!t && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header id="site-header"></header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1>Деньги без <span class="hl">нервов</span></h1>
+          <p class="lead">
+            Карты, вклады, кредиты и ипотека. Всё решается в одном приложении —
+            без очередей, справок и мелкого шрифта.
+          </p>
+          <div class="hero-buttons">
+            <a href="contacts.html" class="btn btn-yellow">Открыть счёт</a>
+            <a href="cards.html" class="btn">Выбрать карту</a>
+          </div>
+          <p class="hero-phone">Бесплатно по России: <a href="tel:88005550123">8 800 555-01-23</a></p>
+        </div>
+
+        <div class="hero-card-wrap">
+          <div class="float-badge fb-1">Бесплатно навсегда</div>
+          <div class="bank-card">
+            <div class="card-top">
+              <div class="logo"><span class="logo-mark">Z</span> Z&nbsp;Банк</div>
+            </div>
+            <div class="card-chip"></div>
+            <div class="card-number">2200&nbsp; 7000&nbsp; 1234&nbsp; 7284</div>
+            <div class="card-bottom">
+              <div>
+                <span>Держатель</span>
+                <strong>ИВАНОВА А. С.</strong>
+              </div>
+              <div>
+                <span>Срок</span>
+                <strong>08 / 29</strong>
+              </div>
+            </div>
+          </div>
+          <div class="float-badge fb-2">Кэшбэк до 7%</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Продукты</span>
+          <h2>Всё, что нужно для денег</h2>
+          <p>Подберите продукт под свою задачу — от ежедневных покупок до квартиры.</p>
+        </div>
+        <div class="grid-3">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            </div>
+            <h3>Дебетовые карты</h3>
+            <p>Кэшбэк до 7% и бесплатное обслуживание. Карта приедет завтра.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <h3>Вклады</h3>
+            <p>До 18% годовых. Пополняйте и снимайте без потери процентов.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M4 18h16"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M2 9l10-6 10 6"/></svg>
+            </div>
+            <h3>Кредиты</h3>
+            <p>Деньги на любые цели. Решение приходит за 5 минут.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+            </div>
+            <h3>Ипотека</h3>
+            <p>Квартира, дом или рефинансирование. Ставка от 7,5%.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16l1.5-4.5A2 2 0 0 1 8.4 10h7.2a2 2 0 0 1 1.9 1.5L19 16"/><path d="M4 16h16"/><circle cx="7.5" cy="17.5" r="2"/><circle cx="16.5" cy="17.5" r="2"/></svg>
+            </div>
+            <h3>Автокредит</h3>
+            <p>Новый или подержанный автомобиль. Одобрение за один день.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 8.7-8 11-4.6-2.3-8-6-8-11V5z"/></svg>
+            </div>
+            <h3>Страхование</h3>
+            <p>Жизнь, здоровье, имущество и путешествия. Оформляется онлайн.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Условия</span>
+          <h2>Без мелкого шрифта</h2>
+          <p>Всё, что вы видите — то и получаете. Комиссий «под звёздочкой» нет.</p>
+        </div>
+        <table class="rates">
+          <thead>
+            <tr>
+              <th>Продукт</th>
+              <th>Условия</th>
+              <th>Ставка</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Вклад</td>
+              <td>от 10 000 ₽, срок 6–24 месяца</td>
+              <td><span class="rate-value">до 18%</span></td>
+            </tr>
+            <tr>
+              <td>Потребительский кредит</td>
+              <td>до 5 000 000 ₽, срок до 7 лет</td>
+              <td><span class="rate-value">от 10,9%</span></td>
+            </tr>
+            <tr>
+              <td>Ипотека</td>
+              <td>срок до 30 лет, взнос от 15%</td>
+              <td><span class="rate-value">от 7,5%</span></td>
+            </tr>
+            <tr>
+              <td>Автокредит</td>
+              <td>срок до 7 лет, любой автомобиль</td>
+              <td><span class="rate-value">от 12,5%</span></td>
+            </tr>
+            <tr>
+              <td>Кредитная карта</td>
+              <td>льготный период 120 дней, лимит до 1 000 000 ₽</td>
+              <td><span class="rate-value">от 19,9%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-label">Как это работает</span>
+          <h2>Начать просто</h2>
+          <p>Четыре шага — и счёт открыт.</p>
+        </div>
+        <div class="steps">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <h3>Оставьте заявку</h3>
+            <p>Форма на сайте или звонок — пару минут.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <h3>Приходите в офис</h3>
+            <p>С паспортом и ИНН. Оформление за один визит.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <h3>Получите карту</h3>
+            <p>Заберите в офисе или закажите доставку.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">4</div>
+            <h3>Пользуйтесь</h3>
+            <p>Все операции — в приложении, круглосуточно.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <h2>Откройте счёт за 10 минут</h2>
+        <p>Оставьте заявку — привезём карту уже завтра или пригласим в ближайший офис.</p>
+        <a href="contacts.html" class="btn btn-dark">Оставить заявку</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
