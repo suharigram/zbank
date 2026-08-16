@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Кредиты Z Банка: потребительский, ипотека, автокредит. Калькулятор платежей и условия." />
-  <title>Кредиты — Z Банк</title>
+  <meta name="description" data-i18n="loans.desc" content="Кредиты Z Банка: потребительский, ипотека, автокредит. Калькулятор платежей и условия." />
+  <title data-i18n="loans.title">Кредиты — Z Банк</title>
   <script>
     try {
       var t = localStorage.getItem("zbank-theme");
@@ -22,41 +22,41 @@
   <main>
     <section class="page-hero">
       <div class="container">
-        <h1>Кредиты</h1>
-        <p>Деньги на любые цели. Ставку видно до подписания, без мелкого шрифта.</p>
+        <h1 data-i18n="loans.hero.title">Кредиты</h1>
+        <p data-i18n="loans.hero.desc">Деньги на любые цели. Ставку видно до подписания, без мелкого шрифта.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
         <div class="section-head">
-          <span class="section-label">Продукты</span>
-          <h2>Три способа получить деньги</h2>
+          <span class="section-label" data-i18n="loans.products.label">Продукты</span>
+          <h2 data-i18n="loans.products.title">Три способа получить деньги</h2>
         </div>
         <div class="grid-3">
           <div class="feature-card">
             <div class="feature-icon">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M4 18h16"/><path d="M6 18v-7"/><path d="M10 18v-7"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M2 9l10-6 10 6"/></svg>
             </div>
-            <h3>Потребительский</h3>
-            <p>До 5 000 000 ₽ на срок до 7 лет. Решение за 5 минут онлайн.</p>
-            <p class="price">от 10,9% годовых</p>
+            <h3 data-i18n="loans.l1.title">Потребительский</h3>
+            <p data-i18n="loans.l1.desc">До 5 000 000 ₽ на срок до 7 лет. Решение за 5 минут онлайн.</p>
+            <p class="price" data-i18n="loans.price.fromRate">от 10,9% годовых</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
             </div>
-            <h3>Ипотека</h3>
-            <p>Квартира, дом или рефинансирование. Срок до 30 лет, взнос от 15%.</p>
-            <p class="price">от 7,5% годовых</p>
+            <h3 data-i18n="loans.l2.title">Ипотека</h3>
+            <p data-i18n="loans.l2.desc">Квартира, дом или рефинансирование. Срок до 30 лет, взнос от 15%.</p>
+            <p class="price" data-i18n="loans.price.fromRate2">от 7,5% годовых</p>
           </div>
           <div class="feature-card">
             <div class="feature-icon">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16l1.5-4.5A2 2 0 0 1 8.4 10h7.2a2 2 0 0 1 1.9 1.5L19 16"/><path d="M4 16h16"/><circle cx="7.5" cy="17.5" r="2"/><circle cx="16.5" cy="17.5" r="2"/></svg>
             </div>
-            <h3>Автокредит</h3>
-            <p>Новый или подержанный автомобиль. Одобрение за один рабочий день.</p>
-            <p class="price">от 12,5% годовых</p>
+            <h3 data-i18n="loans.l3.title">Автокредит</h3>
+            <p data-i18n="loans.l3.desc">Новый или подержанный автомобиль. Одобрение за один рабочий день.</p>
+            <p class="price" data-i18n="loans.price.fromRate3">от 12,5% годовых</p>
           </div>
         </div>
       </div>
@@ -65,40 +65,40 @@
     <section class="section section-alt">
       <div class="container">
         <div class="section-head">
-          <span class="section-label">Калькулятор</span>
-          <h2>Считайте платёж сами</h2>
-          <p>Подвигайте ползунки — пересчёт мгновенный.</p>
+          <span class="section-label" data-i18n="loans.calc.label">Калькулятор</span>
+          <h2 data-i18n="loans.calc.title">Считайте платёж сами</h2>
+          <p data-i18n="loans.calc.subtitle">Подвигайте ползунки — пересчёт мгновенный.</p>
         </div>
         <div class="calc-wrap" id="calc">
           <div class="calc-inputs">
-            <label for="calc-amount">Сумма кредита</label>
+            <label for="calc-amount" data-i18n="loans.calc.amount">Сумма кредита</label>
             <input type="range" id="calc-amount" min="100000" max="5000000" step="50000" value="1000000" />
             <div class="range-row">
               <span id="calc-amount-val">1 000 000 ₽</span>
-              <span>до 5 000 000 ₽</span>
+              <span data-i18n="loans.calc.amountMax">до 5 000 000 ₽</span>
             </div>
 
-            <label for="calc-term">Срок</label>
+            <label for="calc-term" data-i18n="loans.calc.term">Срок</label>
             <input type="range" id="calc-term" min="12" max="84" step="12" value="36" />
             <div class="range-row">
               <span id="calc-term-val">36 мес.</span>
-              <span>до 84 мес.</span>
+              <span data-i18n="loans.calc.termMax">до 84 мес.</span>
             </div>
 
-            <label>Ставка</label>
+            <label data-i18n="loans.calc.rate">Ставка</label>
             <div class="range-row">
-              <span>фиксированная для всех сумм</span>
+              <span data-i18n="loans.calc.fixedRate">фиксированная для всех сумм</span>
               <span>15,9%</span>
             </div>
           </div>
           <div class="calc-result">
-            <span class="label">Платёж в месяц</span>
+            <span class="label" data-i18n="loans.calc.payment">Платёж в месяц</span>
             <div class="value" id="calc-month">35 125 ₽</div>
             <div class="detail">
               <span id="calc-rate">15,9% годовых</span>
             </div>
             <div class="detail">
-              <span>Итого вернёте</span>
+              <span data-i18n="loans.calc.total">Итого вернёте</span>
               <strong id="calc-total">1 264 500 ₽</strong>
             </div>
           </div>
@@ -109,42 +109,42 @@
     <section class="section">
       <div class="container">
         <div class="section-head">
-          <span class="section-label">Сравнение</span>
-          <h2>Кредиты рядом</h2>
+          <span class="section-label" data-i18n="loans.compare.label">Сравнение</span>
+          <h2 data-i18n="loans.compare.title">Кредиты рядом</h2>
         </div>
         <table class="rates">
           <thead>
             <tr>
-              <th>Условие</th>
-              <th>Потребительский</th>
-              <th>Ипотека</th>
-              <th>Автокредит</th>
+              <th data-i18n="loans.compare.colCondition">Условие</th>
+              <th data-i18n="loans.compare.colConsumer">Потребительский</th>
+              <th data-i18n="loans.compare.colMortgage">Ипотека</th>
+              <th data-i18n="loans.compare.colAuto">Автокредит</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Сумма</td>
-              <td>до 5 000 000 ₽</td>
-              <td>до 60 000 000 ₽</td>
-              <td>до 7 000 000 ₽</td>
+              <td data-i18n="loans.compare.amount">Сумма</td>
+              <td data-i18n="loans.compare.amount1">до 5 000 000 ₽</td>
+              <td data-i18n="loans.compare.amount2">до 60 000 000 ₽</td>
+              <td data-i18n="loans.compare.amount3">до 7 000 000 ₽</td>
             </tr>
             <tr>
-              <td>Срок</td>
-              <td>до 7 лет</td>
-              <td>до 30 лет</td>
-              <td>до 7 лет</td>
+              <td data-i18n="loans.compare.term">Срок</td>
+              <td data-i18n="loans.compare.termUp7">до 7 лет</td>
+              <td data-i18n="loans.compare.termUp30">до 30 лет</td>
+              <td data-i18n="loans.compare.termUp7">до 7 лет</td>
             </tr>
             <tr>
-              <td>Ставка</td>
+              <td data-i18n="loans.compare.rate">Ставка</td>
               <td><span class="rate-value">от 10,9%</span></td>
               <td><span class="rate-value">от 7,5%</span></td>
               <td><span class="rate-value">от 12,5%</span></td>
             </tr>
             <tr>
-              <td>Решение</td>
-              <td>5 минут</td>
-              <td>1 день</td>
-              <td>1 день</td>
+              <td data-i18n="loans.compare.decision">Решение</td>
+              <td data-i18n="loans.compare.dec5min">5 минут</td>
+              <td data-i18n="loans.compare.dec1day">1 день</td>
+              <td data-i18n="loans.compare.dec1day">1 день</td>
             </tr>
           </tbody>
         </table>
@@ -154,27 +154,27 @@
     <section class="section section-alt">
       <div class="container">
         <div class="section-head">
-          <span class="section-label">Вопросы</span>
-          <h2>Часто спрашивают</h2>
+          <span class="section-label" data-i18n="loans.faq.label">Вопросы</span>
+          <h2 data-i18n="loans.faq.title">Часто спрашивают</h2>
         </div>
         <div style="max-width: 760px; margin: 0 auto;">
           <div class="faq-item">
-            <button class="faq-q">Какие документы нужны?</button>
-            <div class="faq-a">
+            <button class="faq-q" data-i18n="loans.faq.q1">Какие документы нужны?</button>
+            <div class="faq-a" data-i18n="loans.faq.a1">
               Паспорт и ИНН. Для ипотеки дополнительно — подтверждение дохода:
               справка 2-НДФЛ или выписка со счёта.
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-q">Можно погасить досрочно?</button>
-            <div class="faq-a">
+            <button class="faq-q" data-i18n="loans.faq.q2">Можно погасить досрочно?</button>
+            <div class="faq-a" data-i18n="loans.faq.a2">
               Да, в любой момент и без комиссии. Заявку можно подать в приложении,
               пересчёт произойдёт автоматически.
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-q">Как быстро будет решение?</button>
-            <div class="faq-a">
+            <button class="faq-q" data-i18n="loans.faq.q3">Как быстро будет решение?</button>
+            <div class="faq-a" data-i18n="loans.faq.a3">
               По потребительскому кредиту — до 5 минут. По ипотеке и автокредиту —
               в течение одного рабочего дня.
             </div>
@@ -185,9 +185,9 @@
 
     <section class="cta-band">
       <div class="container">
-        <h2>Посчитали? Оформляйте</h2>
-        <p>Оставьте заявку — перезвоним и поможем с каждым шагом.</p>
-        <a href="contacts.html" class="btn btn-dark">Оставить заявку</a>
+        <h2 data-i18n="loans.cta.title">Посчитали? Оформляйте</h2>
+        <p data-i18n="loans.cta.desc">Оставьте заявку — перезвоним и поможем с каждым шагом.</p>
+        <a href="contacts.html" class="btn btn-dark" data-i18n="ui.request">Оставить заявку</a>
       </div>
     </section>
   </main>

@@ -216,6 +216,29 @@ img {
   display: none;
 }
 
+.lang-toggle {
+  min-width: 44px;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 2px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  transition: transform 0.12s, box-shadow 0.12s, background-color 0.25s ease, color 0.25s ease;
+}
+
+.lang-toggle:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0 0 var(--shadow);
+}
+
 .burger {
   display: none;
   flex-direction: column;
