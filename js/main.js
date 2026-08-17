@@ -593,7 +593,9 @@
     { href: "contacts.html", key: "nav.contacts" }
   ];
 
-  var FOOTER_LINKS = NAV_LINKS;
+  var FOOTER_LINKS = NAV_LINKS.concat([
+    { href: "https://example.com/cabinet", key: "nav.cabinet", target: "_blank" }
+  ]);
 
   var FOOTER_PRODUCTS = [
     { href: "loans.html", key: "products.consumer" },
@@ -753,7 +755,8 @@
     if (!el) return;
 
     var footerNav = FOOTER_LINKS.map(function (link) {
-      return '<li><a href="' + link.href + '">' + t(link.key) + "</a></li>";
+      var target = link.target ? ' target="' + link.target + '" rel="noopener"' : "";
+      return '<li><a href="' + link.href + '"' + target + ">" + t(link.key) + "</a></li>";
     }).join("");
 
     var footerProducts = FOOTER_PRODUCTS.map(function (link) {
