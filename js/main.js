@@ -590,12 +590,11 @@
     { href: "about.html", key: "nav.about" },
     { href: "loans.html", key: "nav.loans" },
     { href: "cards.html", key: "nav.cards" },
-    { href: "contacts.html", key: "nav.contacts" }
+    { href: "contacts.html", key: "nav.contacts" },
+    { href: "https://example.com/cabinet", key: "nav.cabinet", target: "_blank" }
   ];
 
-  var FOOTER_LINKS = NAV_LINKS.concat([
-    { href: "https://example.com/cabinet", key: "nav.cabinet", target: "_blank" }
-  ]);
+  var FOOTER_LINKS = NAV_LINKS;
 
   var FOOTER_PRODUCTS = [
     { href: "loans.html", key: "products.consumer" },
@@ -720,7 +719,8 @@
 
     var nav = NAV_LINKS.map(function (link) {
       var active = link.href === page ? ' class="active"' : "";
-      return '<a href="' + link.href + '"' + active + ">" + t(link.key) + "</a>";
+      var target = link.target ? ' target="' + link.target + '" rel="noopener"' : "";
+      return '<a href="' + link.href + '"' + active + target + ">" + t(link.key) + "</a>";
     }).join("");
 
     var isDark = document.documentElement.getAttribute("data-theme") === "dark";
@@ -739,10 +739,6 @@
       '      <span class="icon-sun">' + ICON_SUN + "</span>" +
       "    </button>" +
       '    <a href="contacts.html" class="btn btn-yellow">' + t("ui.openAccount") + "</a>" +
-      '    <a href="https://example.com/cabinet" class="btn btn-cabinet" target="_blank" rel="noopener">' +
-      '      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cabinet-icon"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>' +
-      "      " + t("nav.cabinet") +
-      "    </a>" +
       '    <button class="burger" id="burger" aria-label="' + t("ui.menu") + '"><span></span><span></span><span></span></button>' +
       "  </div>" +
       "</div>";
