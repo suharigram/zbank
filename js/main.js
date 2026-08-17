@@ -9,6 +9,7 @@
       "nav.loans": "Кредиты",
       "nav.cards": "Карты",
       "nav.contacts": "Контакты",
+      "nav.cabinet": "Личный кабинет",
       "ui.openAccount": "Открыть счёт",
       "ui.selectCard": "Выбрать карту",
       "ui.order": "Заказать",
@@ -33,7 +34,7 @@
       "footer.navTitle": "Навигация",
       "footer.productsTitle": "Продукты",
       "footer.contactsTitle": "Контакты",
-      "footer.copyright": "Z Bank. Все права защищены.",
+      "footer.copyright": "|| Z Bank. Все права защищены.",
       "footer.license": "Лицензия Банка России № 0000",
       "footer.address": "Москва, ул. Финансовая, 7",
       "index.meta": "Z Банк — деньги без нервов",
@@ -81,13 +82,13 @@
       "index.cta.title": "Откройте счёт за 10 минут",
       "index.cta.desc": "Оставьте заявку — привезём карту уже завтра или пригласим в ближайший офис.",
       "about.title": "О банке — Z Банк",
-      "about.desc": "О банке Z Банк: история с 2005 года, ключевые показатели и принципы работы.",
-      "about.hero.title": "Банк с 2005 года",
+      "about.desc": "О банке Z Банк: история с 2026 года, ключевые показатели и принципы работы.",
+      "about.hero.title": "Банк с 2026 года",
       "about.hero.desc": "19 лет работаем без серьёзных сбоев и без скрытых комиссий.",
       "about.story.label": "История",
       "about.story.title": "Всё начиналось с простой идеи",
-      "about.story.p1": "Z Банк основан в 2005 году командой, которая решила, что банковское обслуживание может быть понятным. С тех пор принцип не менялся: продукт считается готовым, когда его легко объяснить без мелкого шрифта.",
-      "about.story.p2": "Мы делаем ставку на технологии и поддержку. Сегодня счетами управляют 2,4 млн клиентов, а среднее время ответа оператора — 40 секунд.",
+      "about.story.p1": "Z Банк основан в 2026 году командой, которая решила, что банковское обслуживание может быть понятным. С тех пор принцип не менялся: продукт считается готовым, когда его легко объяснить без мелкого шрифта.",
+      "about.story.p2": "Мы делаем ставку на технологии и поддержку. Сегодня счетами управляют - млн клиентов, а среднее время ответа оператора — 1 минута.",
       "about.tbl.col1": "Показатель",
       "about.tbl.col2": "Значение",
       "about.tbl.founded": "Год основания",
@@ -278,7 +279,18 @@
       "loans.faq.q3": "Как быстро будет решение?",
       "loans.faq.a3": "По потребительскому кредиту — до 5 минут. По ипотеке и автокредиту — в течение одного рабочего дня.",
       "loans.cta.title": "Посчитали? Оформляйте",
-      "loans.cta.desc": "Оставьте заявку — перезвоним и поможем с каждым шагом."
+      "loans.cta.desc": "Оставьте заявку — перезвоним и поможем с каждым шагом.",
+      "account.title": "Личный кабинет — Z Банк",
+      "account.desc": "Личный кабинет Z Банка: карты, счета, платежи и история операций в одном месте.",
+      "account.hero.title": "Личный кабинет",
+      "account.hero.desc": "Войдите, чтобы управлять картами, счетами и платежами.",
+      "account.login.title": "Вход в кабинет",
+      "account.login.desc": "Введите телефон и пароль из приложения Z Банк.",
+      "account.login.phone": "Телефон",
+      "account.login.phonePh": "8 914 203-75-38",
+      "account.login.password": "Пароль",
+      "account.login.passwordPh": "••••••",
+      "account.login.submit": "Войти"
     },
 
     en: {
@@ -288,6 +300,7 @@
       "nav.loans": "Loans",
       "nav.cards": "Cards",
       "nav.contacts": "Contacts",
+      "nav.cabinet": "Personal account",
       "ui.openAccount": "Open an account",
       "ui.selectCard": "Choose a card",
       "ui.order": "Order",
@@ -312,7 +325,7 @@
       "footer.navTitle": "Navigation",
       "footer.productsTitle": "Products",
       "footer.contactsTitle": "Contacts",
-      "footer.copyright": "Z Bank. All rights reserved.",
+      "footer.copyright": "|| Z Bank. All rights reserved.",
       "footer.license": "Bank of Russia License No. 0000",
       "footer.address": "Moscow, Financial St., 7",
       "index.meta": "Z Bank — money without stress",
@@ -361,11 +374,11 @@
       "index.cta.desc": "Submit a request — we'll bring the card tomorrow or invite you to a nearby office.",
       "about.title": "About — Z Bank",
       "about.desc": "About Z Bank: our history since 2005, key metrics and principles.",
-      "about.hero.title": "A bank since 2005",
+      "about.hero.title": "A bank since 2026",
       "about.hero.desc": "19 years of stable operation with no hidden fees.",
       "about.story.label": "History",
       "about.story.title": "It all started with a simple idea",
-      "about.story.p1": "Z Bank was founded in 2005 by a team that believed banking could be easy to understand. That principle hasn't changed since: a product is done when it can be explained simply, without fine print.",
+      "about.story.p1": "Z Bank was founded in 2026 by a team that believed banking could be easy to understand. That principle hasn't changed since: a product is done when it can be explained simply, without fine print.",
       "about.story.p2": "We focus on technology and support. Today 2.4 million customers manage their accounts, and the average operator response time is 40 seconds.",
       "about.tbl.col1": "Indicator",
       "about.tbl.col2": "Value",
@@ -557,7 +570,18 @@
       "loans.faq.q3": "How fast will I get a decision?",
       "loans.faq.a3": "For consumer loans — up to 5 minutes. For mortgages and auto loans — within one business day.",
       "loans.cta.title": "Done calculating? Apply now",
-      "loans.cta.desc": "Submit a request — we'll call you back and help with every step."
+      "loans.cta.desc": "Submit a request — we'll call you back and help with every step.",
+      "account.title": "Personal account — Z Bank",
+      "account.desc": "Z Bank personal account: cards, accounts, payments and transaction history in one place.",
+      "account.hero.title": "Personal account",
+      "account.hero.desc": "Sign in to manage your cards, accounts and payments.",
+      "account.login.title": "Sign in",
+      "account.login.desc": "Enter the phone and password from the Z Bank app.",
+      "account.login.phone": "Phone",
+      "account.login.phonePh": "8 914 203-75-38",
+      "account.login.password": "Password",
+      "account.login.passwordPh": "••••••",
+      "account.login.submit": "Sign in"
     }
   };
 
@@ -713,6 +737,10 @@
       '      <span class="icon-sun">' + ICON_SUN + "</span>" +
       "    </button>" +
       '    <a href="contacts.html" class="btn btn-yellow">' + t("ui.openAccount") + "</a>" +
+      '    <a href="https://example.com/cabinet" class="btn btn-cabinet" target="_blank" rel="noopener">' +
+      '      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cabinet-icon"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>' +
+      "      " + t("nav.cabinet") +
+      "    </a>" +
       '    <button class="burger" id="burger" aria-label="' + t("ui.menu") + '"><span></span><span></span><span></span></button>' +
       "  </div>" +
       "</div>";

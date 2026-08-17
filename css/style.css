@@ -107,6 +107,21 @@ img {
   box-shadow: 4px 4px 0 0 var(--yellow);
 }
 
+.btn-cabinet {
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  border-color: var(--black);
+}
+
+.btn-cabinet .cabinet-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-cabinet:hover {
+  background: var(--yellow);
+}
+
 /* ---------- Header ---------- */
 
 .site-header {
