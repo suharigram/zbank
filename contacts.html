@@ -52,7 +52,7 @@
             </div>
             <div>
               <h3 data-i18n="contacts.email.title">Почта</h3>
-              <p><strong>support@zbank.ru</strong> <span data-i18n="contacts.email.support">— вопросы клиентов</span></p>
+              <p><strong>zbank_contact@mail.ru</strong> <span data-i18n="contacts.email.support">— вопросы клиентов</span></p>
               <p><strong>press@zbank.ru</strong> <span data-i18n="contacts.email.press">— для СМИ</span></p>
             </div>
           </div>
@@ -81,16 +81,57 @@
 
         <form class="contact-form" id="contact-form">
           <div id="form-success" class="form-success" data-i18n="contacts.form.success">Заявка отправлена. Перезвоним в течение 15 минут в рабочие часы.</div>
+          <div id="form-error" class="form-error" data-i18n="contacts.form.error">Не удалось отправить заявку. Попробуйте позже, напишите нам в Telegram бота либо позвоните нам.</div>
           <h3 data-i18n="contacts.form.title">Оставить заявку</h3>
 
-          <div class="form-group">
-            <label for="cf-name" data-i18n="contacts.form.name">Имя</label>
-            <input type="text" id="cf-name" name="name" placeholder="Ваше имя" data-i18n-placeholder="contacts.form.namePh" required />
+          <div class="form-group" style="display: none;">
+            <label for="cf-website">Website</label>
+            <input type="text" id="cf-website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-surname" data-i18n="contacts.form.surname">Фамилия</label>
+              <input type="text" id="cf-surname" name="surname" placeholder="Иванов" data-i18n-placeholder="contacts.form.surnamePh" required />
+            </div>
+
+            <div class="form-group">
+              <label for="cf-name" data-i18n="contacts.form.name">Имя</label>
+              <input type="text" id="cf-name" name="name" placeholder="Иван" data-i18n-placeholder="contacts.form.namePh" required />
+            </div>
+
+            <div class="form-group">
+              <label for="cf-patronymic" data-i18n="contacts.form.patronymic">Отчество</label>
+              <input type="text" id="cf-patronymic" name="patronymic" placeholder="Иванович" data-i18n-placeholder="contacts.form.patronymicPh" />
+            </div>
           </div>
 
           <div class="form-group">
-            <label for="cf-phone" data-i18n="contacts.form.phone">Телефон</label>
-            <input type="tel" id="cf-phone" name="phone" placeholder="+7 (___) ___-__-__" required />
+            <label for="cf-country" data-i18n="contacts.form.country">Страна</label>
+            <select id="cf-country" name="country">
+              <option value="ru" data-i18n="contacts.form.countryRU">Россия</option>
+              <option value="kz" data-i18n="contacts.form.countryKZ">Казахстан</option>
+              <option value="cn" data-i18n="contacts.form.countryCN">Китай</option>
+              <option value="us" data-i18n="contacts.form.countryUS">США</option>
+              <option value="gb" data-i18n="contacts.form.countryGB">Великобритания</option>
+              <option value="de" data-i18n="contacts.form.countryDE">Германия</option>
+              <option value="tr" data-i18n="contacts.form.countryTR">Турция</option>
+              <option value="ae" data-i18n="contacts.form.countryAE">ОАЭ</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cf-contact-type" data-i18n="contacts.form.contactType">Способ связи</label>
+            <select id="cf-contact-type" name="contact_type">
+              <option value="phone" data-i18n="contacts.form.typePhone">Телефон</option>
+              <option value="email" data-i18n="contacts.form.typeEmail">Email</option>
+              <option value="telegram" data-i18n="contacts.form.typeTelegram">Telegram</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="cf-contact" data-i18n="contacts.form.contact">Контакт</label>
+            <input type="tel" id="cf-contact" name="contact" placeholder="+7 (___) ___-__-__" required />
           </div>
 
           <div class="form-group">
@@ -107,6 +148,8 @@
             <label for="cf-message" data-i18n="contacts.form.message">Сообщение</label>
             <textarea id="cf-message" name="message" placeholder="Что нужно сделать?" data-i18n-placeholder="contacts.form.messagePh"></textarea>
           </div>
+
+          <input type="hidden" name="page" value="contacts.html" />
 
           <button type="submit" class="btn btn-yellow" style="width: 100%;" data-i18n="ui.submit">Отправить</button>
         </form>

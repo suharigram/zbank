@@ -954,9 +954,34 @@ img {
   min-height: 120px;
 }
 
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 560px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
 .form-success {
   display: none;
   background: var(--yellow);
+  border: 2px solid var(--black);
+  color: var(--black);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.form-error {
+  display: none;
+  background: #ff5a4e;
   border: 2px solid var(--black);
   color: var(--black);
   border-radius: 12px;

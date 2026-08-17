@@ -41,7 +41,7 @@
       "index.hero.title1": "Деньги без",
       "index.hero.title2": "нервов",
       "index.hero.lead": "Карты, вклады, кредиты и ипотека. Всё решается в одном приложении — без очередей, справок и мелкого шрифта.",
-      "index.hero.phoneLabel": "Бесплатно по России:",
+      "index.hero.phoneLabel": "Звонок по России:",
       "index.hero.badge1": "Бесплатно навсегда",
       "index.hero.badge2": "Кэшбэк до 7%",
       "index.card.holder": "Держатель",
@@ -180,10 +180,31 @@
       "contacts.call.title": "Колл-центр",
       "contacts.call.desc": "Круглосуточно, без выходных. Блокировка карт — мгновенно.",
       "contacts.form.success": "Заявка отправлена. Перезвоним в течение 15 минут в рабочие часы.",
+      "contacts.form.error": "Не удалось отправить заявку. Попробуйте позже, напишите нам в Telegram бота либо позвоните нам.",
       "contacts.form.title": "Оставить заявку",
       "contacts.form.name": "Имя",
-      "contacts.form.namePh": "Ваше имя",
+      "contacts.form.namePh": "Иван",
+      "contacts.form.surname": "Фамилия",
+      "contacts.form.surnamePh": "Иванов",
+      "contacts.form.patronymic": "Отчество",
+      "contacts.form.patronymicPh": "Иванович",
+      "contacts.form.country": "Страна",
+      "contacts.form.countryRU": "Россия",
+      "contacts.form.countryKZ": "Казахстан",
+      "contacts.form.countryCN": "Китай",
+      "contacts.form.countryUS": "США",
+      "contacts.form.countryGB": "Великобритания",
+      "contacts.form.countryDE": "Германия",
+      "contacts.form.countryTR": "Турция",
+      "contacts.form.countryAE": "ОАЭ",
       "contacts.form.phone": "Телефон",
+      "contacts.form.contactType": "Способ связи",
+      "contacts.form.typePhone": "Телефон",
+      "contacts.form.typeEmail": "Email",
+      "contacts.form.typeTelegram": "Telegram",
+      "contacts.form.contact": "Контакт",
+      "contacts.form.emailPh": "you@example.com",
+      "contacts.form.telegramPh": "@username",
       "contacts.form.topic": "Тема",
       "contacts.form.topicCard": "Заказать карту",
       "contacts.form.topicLoan": "Кредит или ипотека",
@@ -299,7 +320,7 @@
       "index.hero.title1": "Money without",
       "index.hero.title2": "stress",
       "index.hero.lead": "Cards, deposits, loans and mortgage. Everything is handled in one app — no queues, no paperwork, no fine print.",
-      "index.hero.phoneLabel": "Toll-free in Russia:",
+      "index.hero.phoneLabel": "Call within Russia:",
       "index.hero.badge1": "Free forever",
       "index.hero.badge2": "Cashback up to 7%",
       "index.card.holder": "Cardholder",
@@ -438,10 +459,31 @@
       "contacts.call.title": "Call center",
       "contacts.call.desc": "Around the clock, every day. Instant card blocking.",
       "contacts.form.success": "Your request has been sent. We'll call back within 15 minutes during working hours.",
+      "contacts.form.error": "Couldn't send your request. Try again later, message our Telegram bot or call us.",
       "contacts.form.title": "Submit a request",
       "contacts.form.name": "Name",
-      "contacts.form.namePh": "Your name",
+      "contacts.form.namePh": "Ivan",
+      "contacts.form.surname": "Surname",
+      "contacts.form.surnamePh": "Ivanov",
+      "contacts.form.patronymic": "Patronymic",
+      "contacts.form.patronymicPh": "Ivanovich",
+      "contacts.form.country": "Country",
+      "contacts.form.countryRU": "Russia",
+      "contacts.form.countryKZ": "Kazakhstan",
+      "contacts.form.countryCN": "China",
+      "contacts.form.countryUS": "USA",
+      "contacts.form.countryGB": "UK",
+      "contacts.form.countryDE": "Germany",
+      "contacts.form.countryTR": "Turkey",
+      "contacts.form.countryAE": "UAE",
       "contacts.form.phone": "Phone",
+      "contacts.form.contactType": "Contact method",
+      "contacts.form.typePhone": "Phone",
+      "contacts.form.typeEmail": "Email",
+      "contacts.form.typeTelegram": "Telegram",
+      "contacts.form.contact": "Contact",
+      "contacts.form.emailPh": "you@example.com",
+      "contacts.form.telegramPh": "@username",
       "contacts.form.topic": "Topic",
       "contacts.form.topicCard": "Order a card",
       "contacts.form.topicLoan": "Loan or mortgage",
@@ -589,6 +631,7 @@
     for (var j = 0; j < ph.length; j++) {
       ph[j].setAttribute("placeholder", t(ph[j].getAttribute("data-i18n-placeholder")));
     }
+    setContactPlaceholder();
     document.documentElement.setAttribute("lang", lang);
   }
 
@@ -788,18 +831,142 @@
     update();
   }
 
+  var COUNTRY_MASKS = {
+    ru: "+7 (###) ###-##-##",
+    kz: "+7 (###) ###-##-##",
+    cn: "+86 ###-####-####",
+    us: "+1 (###) ###-####",
+    gb: "+44 (###) #### ####",
+    de: "+49 (####) ######",
+    tr: "+90 (###) ###-##-##",
+    ae: "+971 (##) ###-####"
+  };
+
+  function countryPrefix(code) {
+    var mask = COUNTRY_MASKS[code] || COUNTRY_MASKS.ru;
+    return mask.replace(/[^\d]/g, "");
+  }
+
+  function formatByMask(code, digits) {
+    var mask = COUNTRY_MASKS[code] || COUNTRY_MASKS.ru;
+    var out = "";
+    var di = 0;
+    for (var i = 0; i < mask.length && di < digits.length; i++) {
+      out += mask[i] === "#" ? digits[di++] : mask[i];
+    }
+    return out;
+  }
+
+  function contactTypeValue() {
+    var sel = document.getElementById("cf-contact-type");
+    return sel && sel.value ? sel.value : "phone";
+  }
+
+  function setContactPlaceholder() {
+    var input = document.getElementById("cf-contact");
+    if (!input) return;
+    var type = contactTypeValue();
+    if (type === "email") {
+      input.placeholder = t("contacts.form.emailPh");
+    } else if (type === "telegram") {
+      input.placeholder = t("contacts.form.telegramPh");
+    } else {
+      var country = document.getElementById("cf-country");
+      var code = (country && country.value) || "ru";
+      input.placeholder = COUNTRY_MASKS[code].replace(/#/g, "_");
+    }
+  }
+
+  function applyPhoneMask() {
+    var input = document.getElementById("cf-contact");
+    var country = document.getElementById("cf-country");
+    if (!input || !country) return;
+    var code = country.value || "ru";
+    var digits = input.value.replace(/\D/g, "");
+    var prefix = countryPrefix(code);
+    if (digits.slice(0, prefix.length) === prefix) {
+      digits = digits.slice(prefix.length);
+    } else if ((code === "ru" || code === "kz") && digits.charAt(0) === "8") {
+      digits = "7" + digits.slice(1);
+    }
+    input.value = formatByMask(code, digits);
+    setContactPlaceholder();
+  }
+
+  function updateContactField() {
+    var input = document.getElementById("cf-contact");
+    if (!input) return;
+    var type = contactTypeValue();
+    if (type === "email") {
+      input.type = "email";
+      input.setAttribute("inputmode", "email");
+    } else if (type === "telegram") {
+      input.type = "text";
+      input.setAttribute("inputmode", "text");
+    } else {
+      input.type = "tel";
+      input.setAttribute("inputmode", "tel");
+    }
+    input.value = "";
+    setContactPlaceholder();
+  }
+
   function initForm() {
     var form = document.getElementById("contact-form");
     if (!form) return;
 
+    var countrySel = document.getElementById("cf-country");
+    var typeSel = document.getElementById("cf-contact-type");
+    var contactInput = document.getElementById("cf-contact");
+
+    if (typeSel) {
+      typeSel.addEventListener("change", updateContactField);
+    }
+    if (countrySel) {
+      countrySel.addEventListener("change", function () {
+        if (contactTypeValue() !== "phone" || !contactInput) return;
+        contactInput.value = "";
+        applyPhoneMask();
+      });
+    }
+    if (contactInput) {
+      contactInput.addEventListener("input", function () {
+        if (contactTypeValue() === "phone") applyPhoneMask();
+      });
+    }
+    updateContactField();
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var success = document.getElementById("form-success");
-      if (success) success.style.display = "block";
-      form.reset();
-      setTimeout(function () {
-        success.style.display = "none";
-      }, 6000);
+      var error = document.getElementById("form-error");
+
+      function fail() {
+        if (success) success.style.display = "none";
+        if (error) error.style.display = "block";
+      }
+
+      fetch("api/submit_lead.php", { method: "POST", body: new FormData(form) })
+        .then(function (res) {
+          return res.json();
+        })
+        .then(function (json) {
+          if (json && json.ok) {
+            if (error) error.style.display = "none";
+            if (success) {
+              success.style.display = "block";
+              setTimeout(function () {
+                success.style.display = "none";
+              }, 6000);
+            }
+            form.reset();
+          } else {
+            fail();
+          }
+        })
+        .catch(function () {
+          fail();
+        });
     });
   }
 
